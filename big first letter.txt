@@ -1,0 +1,13 @@
+<input type="text" class="form-control" onkeyup="form.surname.value=to_big_letter(this.value)" id="surname" name="surname" required>
+
+   function to_big_letter(str) {
+        store_words=[];
+        rest=str.split(" ");
+        for(i=0;i<rest.length;i++){
+            word=rest[i];
+            upper_word=word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            store_words.push(upper_word);
+        }
+        store_words_with_space=store_words.join(" ");
+        return store_words_with_space;
+    }

@@ -1,0 +1,47 @@
+//datetime min html
+<form class="form-group">
+     <label>@lang('Delivery Date')</label>
+     <input id="deliverydate" type="datetime-local" class="form-control" required>
+     <p><small>@lang('Type as UTC time')</small></p>
+</form>
+//datetime min js
+<script>
+var d = new Date();
+if (d.getMonth()<=8){
+month="0"+(d.getMonth()+1);
+}
+else if (d.getMonth()>=9){
+month=d.getMonth()+1;
+}
+
+if(d.getDate()<10){
+date="0"+d.getDate();
+}
+else if(d.getDate()>=10){
+date=d.getDate();
+}
+
+if(d.getHours()<10){
+hours="0"+d.getHours();
+}
+else if(d.getHours()>=10){
+hours=d.getHours();
+}
+
+if(d.getMinutes()<10){
+minutes="0"+d.getMinutes();
+}
+else if(d.getMinutes()>=10){
+minutes=d.getMinutes();
+}
+
+if(d.getSeconds()<10){
+seconds="0"+d.getSeconds();
+}
+else if(d.getSeconds()>=10){
+seconds=d.getSeconds();
+}
+
+document.getElementById("deliverydate").min = d.getFullYear()+"-"+month+
+"-"+date+"T"+hours+":"+minutes+":"+seconds;     
+</script>
